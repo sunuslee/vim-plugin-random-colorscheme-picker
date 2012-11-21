@@ -31,6 +31,8 @@ then:
 When you use vim open a file, I will randomly pick up a colorscheme
 for you.
 
+* __ALL The Commands below are CaseSensitive__
+
 * if you  __LOVE__  this colorscheme,
 
   Enter( In Normal Mode )
@@ -64,3 +66,17 @@ for you.
   `:CS`
 
   to see current colorscheme
+
+### Tips ###
+  Use this plugin with a large colorsheme pool
+  
+  will increase the possibility of meeting the right ColorScheme for you.
+
+  So, I recommand you also use the ColorScheme Pack at:
+
+  [Colo(u)r Sampler Pack : Oct 2012 Update](http://www.vim.org/scripts/script.php?script_id=625)
+
+  Big Thanks to __Robert Melton__ for his awesome work!
+
+### Any Feedback any Suggestions is welcomed ###
+  mail me: sunus.the.dev[at]gmail.com
