@@ -57,7 +57,7 @@ function! HateCS()
     call rename(g:colorscheme_file_path, g:colorscheme_file_path.'.hate')
     call Picker()
     redrawstatus
-    echo 'using colorscheme: '.g:colorscheme_file
+    call ShowCS()
 endfunction
 
 function! BackCS()
@@ -72,6 +72,10 @@ function! BackCS()
     endfor
     redrawstatus
     echo "you've got all the previously hated colorschemes back"
+endfunction
+
+function! ShowCS()
+    echo 'using colorscheme: '.g:colorscheme_file
 endfunction
 
 call Picker()
