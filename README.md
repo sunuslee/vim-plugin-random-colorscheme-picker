@@ -8,7 +8,7 @@ current colorschemes. So I wrote this plugin to help us out, to
 
 meet the perfect colorsheme that we are __DESTINED__ to be with. 
 
-just like your lovely girlfriends/wifes:)
+just like your lovely girlfriends/wifves:)
 
 Written by sunus Lee
 
