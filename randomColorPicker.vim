@@ -12,12 +12,13 @@
 " just like your lovely girlfriends/wifes:)
 " Written by sunus Lee
 " sunus.the.dev@gmail.com
-" Tue Nov 20 21:49:23 CST 2012
 
 let g:plugin_path=$HOME.'/.vim/plugin/'
-let g:love_path=$HOME.'/.vim/plugin/.love'
+let g:love_path=g:plugin_path.'.love'
+let g:hate_path=g:plugin_path.'.hate'
 let g:colorscheme_file_path=''
 let g:colorscheme_file=''
+
 function! Picker()
     let r=findfile(g:love_path)
     if r != ''
@@ -34,9 +35,15 @@ function! Picker()
         let colorschemes=glob(colorsheme_dir.'/*.vim')
         let arr+=split(colorschemes)
     endfor
-    let rand=system("echo $RANDOM")
-    let rand=rand%len(arr)
-    let g:colorscheme_file_path=arr[rand]
+    let hates=readfile(g:hate_path)
+    while 1
+        let rand=system("echo $RANDOM")
+        let rand=rand%len(arr)
+        let g:colorscheme_file_path=arr[rand]
+        if index(hates, g:colorscheme_file_path) == -1
+            break
+        endif
+    endwhile
     " colorscheme is /path/to/colorscheme_file.vim
     " convert to colorscheme_file
     let g:colorscheme_file=split(g:colorscheme_file_path, '/')[-1][:-5]
@@ -54,22 +61,16 @@ endfunction
 
 function! HateCS()
     call delete(g:love_path)
-    call rename(g:colorscheme_file_path, g:colorscheme_file_path.'.hate')
+    let hates=readfile(g:hate_path)
+    call add(hates, g:colorscheme_file_path)
+    call writefile(hates, g:hate_path)
     call Picker()
     redrawstatus
     call ShowCS()
 endfunction
 
 function! BackCS()
-    let colorscheme_dirs=[$VIMRUNTIME.'/colors', '~/.vim/colors']
-    let arr=[]
-    for colorsheme_dir in colorscheme_dirs
-        let colorschemes=glob(colorsheme_dir.'/*.vim.hate')
-        let arr+=split(colorschemes)
-    endfor
-    for colorscheme_file in arr
-        call rename(colorscheme_file, colorscheme_file[:-6])
-    endfor
+    call delete(g:hate_path)
     redrawstatus
     echo "you've got all the previously hated colorschemes back"
 endfunction
