@@ -9,7 +9,7 @@
 " our favorite colorschemes, and may still not be satisfied with the 
 " current colorschemes. So I wrote this plugin to help us out, to 
 " meet the perfect colorsheme that we are `DESTINED` to be with. 
-" just like your lovely girlfriends/wifes:)
+" just like your lovely girlfriends/wifves:)
 " Written by sunus Lee
 " sunus.the.dev@gmail.com
 
