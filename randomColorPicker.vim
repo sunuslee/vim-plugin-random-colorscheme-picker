@@ -35,7 +35,11 @@ function! Picker()
         let colorschemes=glob(colorsheme_dir.'/*.vim')
         let arr+=split(colorschemes)
     endfor
-    let hates=readfile(g:hate_path)
+    let hates=[]
+    let r=findfile(g:hate_path)
+    if r != ''
+        let hates=readfile(g:hate_path)
+    endif
     while 1
         let rand=system("echo $RANDOM")
         let rand=rand%len(arr)
@@ -70,7 +74,7 @@ function! HateCS()
 endfunction
 
 function! BackCS()
-    call delete(g:hate_path)
+    execute writefile([], g:hate_path)
     redrawstatus
     echo "you've got all the previously hated colorschemes back"
 endfunction
