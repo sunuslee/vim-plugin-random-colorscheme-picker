@@ -2,11 +2,11 @@
 
 Power VIM Users like us have already wasted tons of time to choose
 
-our favorite colorschemes, and may still not be satisfied with the 
+our favorite colorschemes, and may still not be satisfied with the
 
-current colorschemes. So I wrote this plugin to help us out, to 
+current colorschemes. So I wrote this plugin to help us out, to
 
-meet the perfect colorsheme that we are __DESTINED__ to be with. 
+meet the perfect colorsheme that we are __DESTINED__ to be with.
 
 just like your lovely girlfriends/wifves:)
 
@@ -14,10 +14,14 @@ Written by sunus Lee
 
 sunus.the.dev[at]gmail.com
 
-Thu Nov 22 00:03:59 CST 2012
+Wed Dec 12 11:50:55 CST 2012
+
+Added Windows Support, great news for windows vim users, right? :)
 
 ### Installation ###
 Just copy randomColorPicker.vim to your VIM runtime plugin path:
+
+##### Linux #####
 
 You may need to create ~/.vim/plugin directory if it doesn't exist:
 
@@ -26,6 +30,20 @@ You may need to create ~/.vim/plugin directory if it doesn't exist:
 then:
 
 `cp randomColorPicker.vim ~/.vim/plugin`
+
+##### Windows #####
+
+1. create a directory at:
+
+ `C:\Users\YourUsername\vimfiles\plugin`
+
+ or enter directory:
+
+ `C:\Program Files\vim\vim73\plugin`
+
+ vim73 might be vim72 or whatever.. as long as it's where ur vim is installed, it's vaild.
+
+2. copy randomColorPicker.vim to that directory.
 
 ### Usage ###
 When you use vim open a file, I will randomly pick up a colorscheme
@@ -52,8 +70,8 @@ for you.
   randomly pick a new coloscheme.
 
 * if you somehow regret what you did and want to get the hated colorscheme back,
-    
-  Enter(In  Normal Mode) 
+
+  Enter(In  Normal Mode)
 
   `:Back`
 
@@ -69,7 +87,7 @@ for you.
 
 ### Tips ###
   Use this plugin with a large colorsheme pool
-  
+
   will increase the possibility of meeting the right ColorScheme for you.
 
   So, I recommand you also use the ColorScheme Pack at:
@@ -78,5 +96,5 @@ for you.
 
   Big Thanks to __Robert Melton__ for his awesome work!
 
-### Any Feedback any Suggestions is welcomed ###
+### Any Feedback and Suggestions is welcomed ###
   mail me: sunus.the.dev[at]gmail.com
