@@ -30,13 +30,14 @@ function! GetRAND()
 endfunction
 
 let g:os=GetOS()
-let plugin_path = expand('%:p:h')
 
 if g:os == 'linux'
+    let g:plugin_path=$HOME.'/.vim/plugin'
     let g:slash='/'
     let g:love_path=g:plugin_path.'/.love'
     let g:hate_path=g:plugin_path.'/.hate'
 elseif g:os == 'win'
+    let g:plugin_path=$HOME.'/vimfiles/plugin'
     let g:slash='\'
     let g:love_path=g:plugin_path.'\love.txt'
     let g:hate_path=g:plugin_path.'\hate.txt'
