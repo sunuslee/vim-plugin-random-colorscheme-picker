@@ -48,15 +48,6 @@ let g:colorscheme_file=''
 let g:totla_colorschemes = 0
 
 function! Picker()
-    let r=findfile(g:love_path)
-    if r != ''
-        let loves=readfile(g:love_path)
-        if len(loves) > 0
-            let g:colorscheme_file=loves[0]
-            call ApplyCS()
-            return
-        endif
-    endif
     if g:os == 'linux'
         let colorscheme_dirs=[$VIMRUNTIME.'/colors', '~/.vim/colors']
     elseif g:os == 'win'
@@ -72,6 +63,15 @@ function! Picker()
     let r=findfile(g:hate_path)
     if r != ''
         let hates=readfile(g:hate_path)
+    endif
+    let r=findfile(g:love_path)
+    if r != ''
+        let loves=readfile(g:love_path)
+        if len(loves) > 0
+            let g:colorscheme_file=loves[0]
+            call ApplyCS()
+            return
+        endif
     endif
     while 1
         let rand=GetRAND()
