@@ -1,3 +1,11 @@
+This fork is changed for fitting [vundle][1]
+
+add following line in you [vundle][1] config
+
+Bundle 'bkbncn/vim-colorschemes-picker'
+
+[1]:https://github.com/gmarik/vundle
+
 ## ABOUT ##
 
 Power VIM Users like us have already wasted tons of time to choose
