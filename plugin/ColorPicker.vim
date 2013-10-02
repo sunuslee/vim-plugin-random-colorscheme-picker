@@ -32,12 +32,12 @@ endfunction
 let g:os=GetOS()
 
 if g:os == 'linux'
-    let g:plugin_path=$HOME.'/.vim/plugin'
+    let g:plugin_path=$HOME.'/.vim/bundle/vim-colorschemes-picker/'
     let g:slash='/'
     let g:love_path=g:plugin_path.'/.love'
     let g:hate_path=g:plugin_path.'/.hate'
 elseif g:os == 'win'
-    let g:plugin_path=$HOME.'/vimfiles/plugin'
+    let g:plugin_path=$HOME.'/vimfiles/bundle/vim-colorschemes-picker/'
     let g:slash='\'
     let g:love_path=g:plugin_path.'\love.txt'
     let g:hate_path=g:plugin_path.'\hate.txt'
