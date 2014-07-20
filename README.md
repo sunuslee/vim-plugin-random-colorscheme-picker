@@ -1,14 +1,6 @@
 ## ABOUT ##
 
-Power VIM Users like us have already wasted tons of time to choose
-
-our favorite colorschemes, and may still not be satisfied with the
-
-current colorschemes. So I wrote this plugin to help us out, to
-
-meet the perfect colorsheme that we are __DESTINED__ to be with.
-
-just like your lovely girlfriends/wifves:)
+Power VIM Users like us have already wasted tons of time to choose our favorite colorschemes, and may still not be satisfied with the current colorschemes. So I wrote this plugin to help us out, to meet the perfect colorsheme that we are __DESTINED__ to be with. (just like your lovely girlfriends/wifves:)
 
 Written by sunus Lee
 
@@ -85,16 +77,22 @@ for you.
 
   to see current colorscheme
 
-### Tips ###
-  Use this plugin with a large colorsheme pool
+* Enter(In Normal Mode)
 
-  will increase the possibility of meeting the right ColorScheme for you.
+  `:CSnext`
+
+  to switch to a new random theme without restarting vim.
+
+### Tips ###
+  Use this plugin with a large colorsheme pool will increase the possibility of meeting the right ColorScheme for you.
 
   So, I recommand you also use the ColorScheme Pack at:
 
   [Colo(u)r Sampler Pack : Oct 2012 Update](http://www.vim.org/scripts/script.php?script_id=625)
 
   Big Thanks to __Robert Melton__ for his awesome work!
+
+  A more complete and actively maintained package can be found [here](https://github.com/flazz/vim-colorschemes).
 
 ### Any Feedback and Suggestions is welcomed ###
   mail me: sunus.the.dev[at]gmail.com
