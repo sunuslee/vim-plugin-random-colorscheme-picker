@@ -32,7 +32,7 @@ endfunction
 let g:os=GetOS()
 
 if g:os == 'linux'
-    let g:plugin_path=expand('%:p:h')
+    let g:plugin_path=fnamemodify(resolve(expand('<sfile>:p')), ':h')
     let g:slash='/'
     let g:love_path=g:plugin_path.'/.love'
     let g:hate_path=g:plugin_path.'/.hate'
