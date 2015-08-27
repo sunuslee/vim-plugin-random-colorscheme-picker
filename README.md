@@ -1,6 +1,6 @@
 ## ABOUT ##
 
-Power VIM Users like us have already wasted tons of time to choose our favorite colorschemes, and may still not be satisfied with the current colorschemes. So I wrote this plugin to help us out, to meet the perfect colorsheme that we are __DESTINED__ to be with. (just like your lovely girlfriends/wifves:)
+Power VIM Users like us have already wasted tons of time to choose our favorite colorschemes, and may still not be satisfied with the current colorschemes. So I wrote this plugin to help us out, to meet the perfect colorsheme that we are __DESTINED__ to be with. (just like your lovely partners:)
 
 Written by sunus Lee
 
