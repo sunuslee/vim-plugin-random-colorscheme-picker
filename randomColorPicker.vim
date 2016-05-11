@@ -43,19 +43,23 @@ elseif g:os == 'win'
     let g:hate_path=g:plugin_path.'\hate.txt'
 endif
 
+
+if !exists('g:colorscheme_user_path')
+  let g:colorscheme_user_path = ''
+end
 let g:colorscheme_file_path=''
 let g:colorscheme_file=''
-let g:totla_colorschemes = 0
+let g:total_colorschemes = 0
 
 function! Picker()
     if g:os == 'linux'
-        let colorscheme_dirs=[$VIMRUNTIME.'/colors', '~/.vim/colors']
+        let colorscheme_dirs=[$VIMRUNTIME.'/colors', '~/.vim/colors'] + split(g:colorscheme_user_path, ',')
     elseif g:os == 'win'
-	let colorscheme_dirs=[$VIMRUNTIME.'/colors', $HOME.'/vimfiles/colors']
+      let colorscheme_dirs=[$VIMRUNTIME.'/colors', $HOME.'/vimfiles/colors'] + split(g:colorscheme_user_path, ',')
     endif
     let arr=[]
-    for colorsheme_dir in colorscheme_dirs
-        let colorschemes=glob(colorsheme_dir.'/*.vim')
+    for colorscheme_dir in colorscheme_dirs
+        let colorschemes=glob(colorscheme_dir.'/*.vim')
         let arr+=split(colorschemes, '\n')
     endfor
     let g:total_colorschemes = len(arr)
