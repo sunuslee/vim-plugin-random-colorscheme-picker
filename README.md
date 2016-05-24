@@ -1,6 +1,6 @@
 ## ABOUT ##
 
-Power VIM Users like us have already wasted tons of time to choose our favorite colorschemes, and may still not be satisfied with the current colorschemes. So I wrote this plugin to help us out, to meet the perfect colorsheme that we are __DESTINED__ to be with. (just like your lovely partners:)
+Power VIM Users like us have already wasted tons of time to choose our favorite colorschemes, and may still not be satisfied with the current colorschemes. So I wrote this plugin to help us out, to meet the perfect colorscheme that we are __DESTINED__ to be with. (just like your lovely partners:)
 
 Written by sunus Lee
 
@@ -33,7 +33,7 @@ then:
 
  `C:\Program Files\vim\vim73\plugin`
 
- vim73 might be vim72 or whatever.. as long as it's where ur vim is installed, it's vaild.
+ vim73 might be vim72 or whatever.. as long as it's where your vim is installed, it's valid.
 
 2. copy randomColorPicker.vim to that directory.
 
@@ -59,7 +59,7 @@ for you.
 
   then I will never pick this colorscheme for you and then
 
-  randomly pick a new coloscheme.
+  randomly pick a new colorscheme.
 
 * if you somehow regret what you did and want to get the hated colorscheme back,
 
@@ -67,7 +67,7 @@ for you.
 
   `:Back`
 
-  then all you hated colorschem will back to select pool, and you might see
+  then all you hated colorscheme will back to select pool, and you might see
 
   her again:)
 
@@ -82,6 +82,17 @@ for you.
   `:CSnext`
 
   to switch to a new random theme without restarting vim.
+
+#### Variables ####
+* g:colorscheme_user_path
+
+  Set to a comma-delimited string for Vim to look for colorschemes in additional areas, e.g.
+
+  ```
+  let g:colorscheme_user_path = '~/.vim/bundle/vim-colorschemes/colors'
+  ```
+
+  **NOTE:** This only works if Vim is aware of the other colorscheme paths, such as when you install colorscheme repositories using a plugin manager.
 
 ### Tips ###
   Use this plugin with a large colorsheme pool will increase the possibility of meeting the right ColorScheme for you.

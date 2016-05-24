@@ -109,25 +109,29 @@ function! HateCS()
         let hates=[]
     endif
     if len(hates) + 1 == g:total_colorschemes
-        redrawstatus
-	echo "She is the last one you got, Can't hate it anymore, or :Back first."
+        redraw
+  echo "She is the last one you got, Can't hate it anymore, or :Back first."
     else
         call add(hates, g:colorscheme_file_path)
         call writefile(hates, g:hate_path)
         call Picker()
-        redrawstatus
-        call ShowCS()
     endif
 endfunction
 
 function! BackCS()
     execute writefile([], g:hate_path)
-    redrawstatus
+    redraw
     echo "you've got all the previously hated colorschemes back"
 endfunction
 
 function! ShowCS()
+    redraw
     echo 'using colorscheme: '.g:colorscheme_file
+endfunction
+
+function! PickAndShow()
+  call Picker()
+  call ShowCS()
 endfunction
 
 call Picker()
@@ -136,4 +140,4 @@ command! Love call LoveCS()
 command! Hate call HateCS()
 command! CS call ShowCS()
 command! Back call BackCS()
-command! CSnext call Picker()
+command! CSnext call PickAndShow()
