@@ -84,7 +84,7 @@ for you.
   to switch to a new random theme without restarting vim.
 
 #### Variables ####
-* g:colorscheme_user_path
+* *g:colorscheme_user_path*
 
   Set to a comma-delimited string for Vim to look for colorschemes in additional areas, e.g.
 
