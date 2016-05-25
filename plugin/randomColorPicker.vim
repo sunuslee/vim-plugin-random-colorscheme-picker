@@ -114,7 +114,7 @@ function! HateCS()
     else
         call add(hates, g:colorscheme_file_path)
         call writefile(hates, g:hate_path)
-        call Picker()
+        call PickAndShow()
     endif
 endfunction
 
