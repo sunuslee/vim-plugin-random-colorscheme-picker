@@ -43,25 +43,35 @@ elseif g:os == 'win'
     let g:hate_path=g:plugin_path.'\hate.txt'
 endif
 
+
+if !exists('g:colorscheme_user_path')
+  let g:colorscheme_user_path = ''
+end
 let g:colorscheme_file_path=''
 let g:colorscheme_file=''
-let g:totla_colorschemes = 0
-
-" Fetch the runtime path and search for 
-" all the color files
-let colorscheme_dirs = []
-for i in split(&runtimepath, ',')
-    call add(colorscheme_dirs, i.'/colors')
-endfor
-
-let g:all_colorschemes=[]
-for colorsheme_dir in colorscheme_dirs
-    let colorschemes=glob(colorsheme_dir.'/*.vim')
-    let g:all_colorschemes+=split(colorschemes, '\n')
-endfor
+let g:total_colorschemes = 0
 
 function! Picker()
-    let arr = g:all_colorschemes
+    " Fetch the runtime path and search for 
+    " all the color files
+    let colorscheme_dirs = []
+    for i in split(&runtimepath, ',')
+        if !empty(glob(i.'/colors'))
+            call add(colorscheme_dirs, i.'/colors')
+        endif
+    endfor
+
+    let g:all_colorschemes=[]
+    for colorsheme_dir in colorscheme_dirs
+        let colorschemes=glob(colorsheme_dir.'/*.vim')
+        let g:all_colorschemes+=split(colorschemes, '\n')
+    endfor
+
+    let arr=[]
+    for colorscheme_dir in colorscheme_dirs
+        let colorschemes=glob(colorscheme_dir.'/*.vim')
+        let arr+=split(colorschemes, '\n')
+    endfor
     let g:total_colorschemes = len(arr)
     let hates=[]
     let r=findfile(g:hate_path)
@@ -130,7 +140,7 @@ function! ShowCS()
     echo 'using colorscheme: '.g:colorscheme_file
 endfunction
 
-" call Picker()
+call Picker()
 autocmd VimEnter * echo 'using colorscheme: '.g:colorscheme_file
 command! Love call LoveCS()
 command! Hate call HateCS()
