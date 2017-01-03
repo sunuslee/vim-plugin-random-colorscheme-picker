@@ -11,7 +11,22 @@ Wed Dec 12 11:50:55 CST 2012
 Added Windows Support, great news for windows vim users, right? :)
 
 ### Installation ###
+
+### As a Pathogen bundle ###
+If you have pathogen installed and can just copy into ~/.vim/bundle like this:
+
+cd ~/.vim/bundle && \
+git clone https://github.com/sunuslee/vim-plugin-random-colorscheme-picker
+
+if you are using Janus:
+
+cd ~/.janus && \
+git clone https://github.com/sunuslee/vim-plugin-random-colorscheme-picker
+
+
+### Without Pathogen ###
 Just copy randomColorPicker.vim to your VIM runtime plugin path:
+
 
 ##### Linux #####
 
@@ -21,7 +36,7 @@ You may need to create ~/.vim/plugin directory if it doesn't exist:
 
 then:
 
-`cp randomColorPicker.vim ~/.vim/plugin`
+`cp plugin/randomColorPicker.vim ~/.vim/plugin`
 
 ##### Windows #####
 
@@ -35,11 +50,14 @@ then:
 
  vim73 might be vim72 or whatever.. as long as it's where your vim is installed, it's valid.
 
-2. copy randomColorPicker.vim to that directory.
+2. copy plugin/randomColorPicker.vim to that directory.
 
 ### Usage ###
-When you use vim open a file, I will randomly pick up a colorscheme
-for you.
+You will need to add the following line to your .vimrc file to pick the
+next random colorscheme:
+
+CSNext
+
 
 * __ALL The Commands below are CaseSensitive__
 

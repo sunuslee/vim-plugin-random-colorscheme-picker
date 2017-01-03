@@ -32,7 +32,7 @@ endfunction
 let g:os=GetOS()
 
 if g:os == 'linux'
-    let g:plugin_path=$HOME.'/.vim/plugin'
+    let g:plugin_path=fnamemodify(resolve(expand('<sfile>:p')), ':h')
     let g:slash='/'
     let g:love_path=g:plugin_path.'/.love'
     let g:hate_path=g:plugin_path.'/.hate'
@@ -52,11 +52,21 @@ let g:colorscheme_file=''
 let g:total_colorschemes = 0
 
 function! Picker()
-    if g:os == 'linux'
-        let colorscheme_dirs=[$VIMRUNTIME.'/colors', '~/.vim/colors'] + split(g:colorscheme_user_path, ',')
-    elseif g:os == 'win'
-      let colorscheme_dirs=[$VIMRUNTIME.'/colors', $HOME.'/vimfiles/colors'] + split(g:colorscheme_user_path, ',')
-    endif
+    " Fetch the runtime path and search for 
+    " all the color files
+    let colorscheme_dirs = []
+    for i in split(&runtimepath, ',')
+        if !empty(glob(i.'/colors'))
+            call add(colorscheme_dirs, i.'/colors')
+        endif
+    endfor
+
+    let g:all_colorschemes=[]
+    for colorsheme_dir in colorscheme_dirs
+        let colorschemes=glob(colorsheme_dir.'/*.vim')
+        let g:all_colorschemes+=split(colorschemes, '\n')
+    endfor
+
     let arr=[]
     for colorscheme_dir in colorscheme_dirs
         let colorschemes=glob(colorscheme_dir.'/*.vim')
