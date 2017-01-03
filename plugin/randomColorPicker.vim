@@ -110,13 +110,11 @@ function! HateCS()
     endif
     if len(hates) + 1 == g:total_colorschemes
         redrawstatus
-	echo "She is the last one you got, Can't hate it anymore, or :Back first."
+  echo "She is the last one you got, Can't hate it anymore, or :Back first."
     else
         call add(hates, g:colorscheme_file_path)
         call writefile(hates, g:hate_path)
-        call Picker()
-        redrawstatus
-        call ShowCS()
+        call PickAndShow()
     endif
 endfunction
 
@@ -127,7 +125,13 @@ function! BackCS()
 endfunction
 
 function! ShowCS()
+    redrawstatus
     echo 'using colorscheme: '.g:colorscheme_file
+endfunction
+
+function! PickAndShow()
+  call Picker()
+  call ShowCS()
 endfunction
 
 call Picker()
@@ -136,4 +140,4 @@ command! Love call LoveCS()
 command! Hate call HateCS()
 command! CS call ShowCS()
 command! Back call BackCS()
-command! CSnext call Picker()
+command! CSnext call PickAndShow()
